@@ -9,7 +9,7 @@ export class DataService {
 
   // set endpoint and your API key
   endpoint = "convert";
-  access_key = "9342f2fd9f2d9f9a34346c1c9e5f2917";
+  access_key = "YOUR_FIXER.IO_API";
   baseURL = "http://data.fixer.io/api/";
 
   currencySymbols() {
