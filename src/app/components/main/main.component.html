@@ -1,0 +1,60 @@
+<div class="row">
+  <div class="col-sm-12">
+    <form [formGroup]="newForm" (ngSubmit)="convert()">
+      <div class="row">
+        <div class="col-sm-6">
+          <div class="form-group">
+            <label for="from">Select From:</label>
+            <select
+              class="form-control"
+              id="from"
+              formControlName="from"
+              placeholder="Select from"
+            >
+              <option value="{{ symbol.code }}" *ngFor="let symbol of symbols"
+                >{{ symbol.text }} ({{ symbol.code }})</option
+              >
+            </select>
+          </div>
+        </div>
+        <div class="col-sm-6">
+          <div class="form-group">
+            <label for="to">Select To:</label>
+            <select
+              class="form-control"
+              id="to"
+              formControlName="to"
+              placeholder="Select to"
+            >
+              <option value="{{ symbol.code }}" *ngFor="let symbol of symbols"
+                >{{ symbol.text }} ({{ symbol.code }})</option
+              >
+            </select>
+          </div>
+        </div>
+        <div class="col-sm-12">
+          <div class="form-group">
+            <label for="amount">Amount:</label>
+            <input
+              class="form-control"
+              type="number"
+              formControlName="amount"
+              placeholder="Amount"
+            />
+          </div>
+        </div>
+        <div class="col-sm-12 text-center">
+          <button
+            type="submit"
+            class="btn btn-primary"
+            [disabled]="!newForm.valid"
+          >
+            Convert
+          </button>
+        </div>
+      </div>
+    </form>
+    <br />
+    <h5>{{ message }}</h5>
+  </div>
+</div>
